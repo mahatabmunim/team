@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.team-form{
+    width: 450px;
+    margin: 100px auto 0px;
+
+    hr{
+        margin: 10px 0px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+    }
+    input,select{
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+

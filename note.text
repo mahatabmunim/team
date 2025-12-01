@@ -1,0 +1,65 @@
+<?php
+   $connection = new mysqli('localhost','root','','team');
+
+    $sql = "CREATE TABLE devlopers(
+        id          INT(11) AUTO_INCREMENT PRIMARY KEY,
+        name        VARCHAR(100) NOT NULL,
+        age         INT(3) NOT NULL,
+        cell        VARCHAR(20) NOT NULL UNIQUE,
+        location    ENUM('Barisal','Patuakhali','Mirzagonj','Subidkhali'),
+        gender      ENUM('Male','Female'),
+        skill       ENUM('IOS','Laravel','PHP','Python')
+    
+        status      BOOLEAN DEFAULT true,
+        trash       BOOLEAN DEFAULT false,
+        created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        
+    )";
+    $connection -> query($sql);
+    
+?>
+
+
+<?php
+   $connection = new mysqli('localhost','root','','team');
+
+
+   $sql = "INSERT INTO devlopers (name,age,cell,location,gender,skill) VALUES 
+ ('Munim ',64,'01638446434','Patuakhali','Male','Laravel'),
+ ('Parvej ',34,'01644540434','Patuakhali','Male','PHP'),
+ ('Sovon ',23,'01634960434','Subidlhali','Male','Laravel'),
+ ('Mahatab ',45,'0143454534','Barisal','Male','IOS'),
+ ('Jahid ',42,'01634548434','Mirzagonj','Male','PHP'),
+ ('Musa ',54,'01637540434','Patuakhali','Male','Python')";
+   $connection -> query($sql);
+
+?>
+
+//dev.php
+<?php
+    //DB connection
+    $connection = new mysqli('localhost','root','','team');
+
+    //query
+    $sql = "SELECT * from devlopers";
+    $data = $connection -> query($sql);
+
+    echo "<pre>";
+    print_r($data ->fetch_array());
+    echo "</pre>";
+
+?>
+<?php
+    //DB connection
+    $connection = new mysqli('localhost','root','','team');
+
+    //query
+    $sql = "SELECT * from devlopers";
+    $data = $connection -> query($sql);
+
+    echo "<pre>";
+    print_r($data ->fetch_assoc());
+    echo "</pre>";
+
+?>
