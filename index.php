@@ -49,6 +49,7 @@ if(isset($_POST['developer_form'])){
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <h1>Hello PHP</h1>
     <div class="team-form">
         <a href="./devs.php">Developers</a>
         <h2>Create Developer</h2>       
